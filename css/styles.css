@@ -168,7 +168,6 @@ p { margin: 0; }
 
 .hero-inner { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
 .hero-ring { position: absolute; top: 50%; left: 50%; width: min(640px, 90vw); height: auto; transform: translate(-50%, -50%); color: var(--text-dim); pointer-events: none; }
-.hero-moth, .hero-sprig { color: var(--accent); }
 
 .hero-copy { position: relative; max-width: 640px; padding: 40px 0; }
 .hero-title { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
@@ -231,7 +230,13 @@ p { margin: 0; }
 .process { padding: 100px 0; }
 .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
 .process-step { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-.process-step .avatar { margin-bottom: 2px; }
+.step-num {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  font-family: var(--font-body); font-weight: 700; font-size: .9rem;
+  margin-bottom: 2px;
+}
 .process-step h3 { font-size: 1.1rem; }
 .process-step p { color: var(--text-dim); font-size: .9rem; }
 
@@ -275,19 +280,6 @@ p { margin: 0; }
 .style-section { padding: 90px 0; }
 .style-section:nth-of-type(even) { background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .style-section-num { font-family: var(--font-display); font-size: 1.1rem; color: var(--accent); }
-
-/* ---------- Marquee (portfolio page featured reel) ---------- */
-.marquee-section { padding: 70px 0 90px; overflow: hidden; }
-.marquee-row { overflow: hidden; margin-bottom: 16px; }
-.marquee-row:last-child { margin-bottom: 0; }
-.marquee-track { display: flex; gap: 16px; width: max-content; }
-.marquee-track img { height: 190px; width: auto; border-radius: 4px; object-fit: cover; flex-shrink: 0; border: 1px solid var(--line); }
-.marquee-left { animation: marqueeLeft 46s linear infinite; }
-.marquee-right { animation: marqueeRight 46s linear infinite; }
-@keyframes marqueeLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes marqueeRight { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-.marquee-row:hover .marquee-track { animation-play-state: paused; }
-@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
 
 /* ---------- Lightbox (kept dark — makes photos pop regardless of site theme) ---------- */
 .lightbox {
@@ -403,5 +395,4 @@ p { margin: 0; }
   .hero-ring { width: 110vw; }
   .page-hero { padding: 150px 0 70px; }
   .process-grid { grid-template-columns: 1fr; }
-  .marquee-track img { height: 130px; }
 }

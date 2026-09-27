@@ -75,31 +75,39 @@
     </div>
   </section>
 
-  <!-- Booking request form -->
+  <!-- Request form -->
   <section class="form-section" id="booking-form">
     <div class="container form-shell">
       <div class="section-head reveal">
-        <span class="eyebrow">Booking</span>
+        <span class="eyebrow">Get In Touch</span>
         <h2>Request A Session</h2>
-        <p class="section-sub">Send the details below and Kapoe will follow up to confirm a date.</p>
+        <p class="section-sub">Choose consultation or appointment, send the details below, and Kapoe will follow up personally.</p>
       </div>
-      <form class="reveal" id="bookingForm" novalidate>
+      <form class="reveal" id="requestForm" novalidate>
         <div class="form-grid">
           <div class="field">
-            <label for="bName">Name</label>
-            <input type="text" id="bName" name="name" required maxlength="80" autocomplete="name">
+            <label for="rName">Name</label>
+            <input type="text" id="rName" name="name" required maxlength="80" autocomplete="name">
           </div>
           <div class="field">
-            <label for="bEmail">Email</label>
-            <input type="email" id="bEmail" name="email" required maxlength="120" autocomplete="email">
+            <label for="rEmail">Email</label>
+            <input type="email" id="rEmail" name="email" required maxlength="120" autocomplete="email">
           </div>
           <div class="field">
-            <label for="bPhone">Phone <span class="opt">(optional)</span></label>
-            <input type="tel" id="bPhone" name="phone" maxlength="30" autocomplete="tel">
+            <label for="rPhone">Phone <span class="opt">(optional)</span></label>
+            <input type="tel" id="rPhone" name="phone" maxlength="30" autocomplete="tel">
           </div>
           <div class="field">
-            <label for="bSize">Approximate size</label>
-            <select id="bSize" name="size" required>
+            <label for="rType">Request type</label>
+            <select id="rType" name="requestType" required>
+              <option value="" disabled selected>Choose one</option>
+              <option value="Consultation">Consultation</option>
+              <option value="Appointment">Appointment</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="rSize">Approximate size</label>
+            <select id="rSize" name="size" required>
               <option value="" disabled selected>Choose one</option>
               <option>Small (2&ndash;4 in)</option>
               <option>Medium (4&ndash;8 in)</option>
@@ -108,63 +116,24 @@
             </select>
           </div>
           <div class="field">
-            <label for="bPlacement">Placement</label>
-            <input type="text" id="bPlacement" name="placement" placeholder="e.g. forearm, shoulder" required maxlength="80">
+            <label for="rPlacement">Placement</label>
+            <input type="text" id="rPlacement" name="placement" placeholder="e.g. forearm, shoulder" required maxlength="80">
           </div>
           <div class="field">
-            <label for="bDate">Preferred date <span class="opt">(optional)</span></label>
-            <input type="date" id="bDate" name="date">
+            <label for="rDate">Preferred date <span class="opt">(optional)</span></label>
+            <input type="date" id="rDate" name="date">
           </div>
           <div class="field field-full">
-            <label for="bIdea">Tell me about the piece</label>
-            <textarea id="bIdea" name="idea" required maxlength="600" placeholder="Style, subject, references, anything that helps"></textarea>
+            <label for="rIdea">Tell me about the piece</label>
+            <textarea id="rIdea" name="idea" required maxlength="600" placeholder="Style, subject, references, anything that helps"></textarea>
+          </div>
+          <div class="field field-full">
+            <label for="rRef">Inspiration / reference links <span class="opt">(optional)</span></label>
+            <input type="text" id="rRef" name="reference" maxlength="300" placeholder="Pinterest board, Instagram post, etc.">
           </div>
         </div>
-        <button type="submit" class="btn btn-accent btn-block">Send Booking Request</button>
-        <p class="form-status" id="bookingStatus" role="status"></p>
-      </form>
-    </div>
-  </section>
-
-  <!-- Tattoo idea submission form -->
-  <section class="form-section" id="idea-form">
-    <div class="container form-shell">
-      <div class="section-head reveal">
-        <span class="eyebrow">Not Ready To Book?</span>
-        <h2>Submit A Tattoo Idea</h2>
-        <p class="section-sub">Got a concept but nothing scheduled yet? Drop it here &mdash; Kapoe will reach out if it's a fit.</p>
-      </div>
-      <form class="reveal" id="ideaForm" novalidate>
-        <div class="form-grid">
-          <div class="field">
-            <label for="iName">Name</label>
-            <input type="text" id="iName" name="name" required maxlength="80" autocomplete="name">
-          </div>
-          <div class="field">
-            <label for="iEmail">Email</label>
-            <input type="email" id="iEmail" name="email" required maxlength="120" autocomplete="email">
-          </div>
-          <div class="field field-full">
-            <label for="iStyle">Style you're thinking</label>
-            <select id="iStyle" name="style" required>
-              <option value="" disabled selected>Choose one</option>
-              <option>Black &amp; Grey Realism</option>
-              <option>Custom Lettering &amp; Memorial</option>
-              <option>Custom Concept &amp; Character</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-          <div class="field field-full">
-            <label for="iIdea">Describe your idea</label>
-            <textarea id="iIdea" name="idea" required maxlength="600" placeholder="What's the story behind it? Any references you're drawing from?"></textarea>
-          </div>
-          <div class="field field-full">
-            <label for="iRef">Inspiration / reference links <span class="opt">(optional)</span></label>
-            <input type="text" id="iRef" name="reference" maxlength="300" placeholder="Pinterest board, Instagram post, etc.">
-          </div>
-        </div>
-        <button type="submit" class="btn btn-accent btn-block">Submit Your Idea</button>
-        <p class="form-status" id="ideaStatus" role="status"></p>
+        <button type="submit" class="btn btn-accent btn-block">Send Request</button>
+        <p class="form-status" id="requestStatus" role="status"></p>
       </form>
     </div>
   </section>

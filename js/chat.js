@@ -85,34 +85,19 @@ async function submitInquiry(type, data, statusEl, form) {
   }
 }
 
-function initBookingForm() {
-  const form = document.getElementById('bookingForm');
-  const status = document.getElementById('bookingStatus');
+function initRequestForm() {
+  const form = document.getElementById('requestForm');
+  const status = document.getElementById('requestStatus');
   if (!form) return;
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    submitInquiry('booking', {
+    submitInquiry(form.requestType.value.toLowerCase(), {
       name: form.name.value.trim(),
       email: form.email.value.trim(),
       phone: form.phone.value.trim(),
       size: form.size.value,
       placement: form.placement.value.trim(),
       date: form.date.value,
-      idea: form.idea.value.trim(),
-    }, status, form);
-  });
-}
-
-function initIdeaForm() {
-  const form = document.getElementById('ideaForm');
-  const status = document.getElementById('ideaStatus');
-  if (!form) return;
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    submitInquiry('idea', {
-      name: form.name.value.trim(),
-      email: form.email.value.trim(),
-      style: form.style.value,
       idea: form.idea.value.trim(),
       reference: form.reference.value.trim(),
     }, status, form);
@@ -121,8 +106,7 @@ function initIdeaForm() {
 
 function boot() {
   initWall();
-  initBookingForm();
-  initIdeaForm();
+  initRequestForm();
 }
 
 if (document.readyState === 'loading') {
